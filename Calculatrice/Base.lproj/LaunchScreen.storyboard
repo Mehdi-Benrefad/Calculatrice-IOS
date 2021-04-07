@@ -1,25 +1,101 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="ipad11_0rounded" orientation="portrait" layout="splitview1_3" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Balham.otf">
+            <string>Balham</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="EHf-IW-A2E">
             <objects>
                 <viewController id="01J-lp-oVM" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="1194"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mehdi Benrefad Presente ..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ftb-zk-fuI">
+                                <rect key="frame" x="20" y="83" width="280" height="29"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <color key="textColor" red="0.11763454230000001" green="0.1176540628" blue="0.1176278964" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" type="system" pointSize="34"/>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Calculatrice" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="szF-dS-t6G">
+                                <rect key="frame" x="59" y="577.5" width="202" height="39.5"/>
+                                <fontDescription key="fontDescription" name="Balham" family="Balham" pointSize="40"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" name="Balham" family="Balham" pointSize="57"/>
+                                </variation>
+                            </label>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ago-dY-ZKJ">
+                                <rect key="frame" x="102" y="927" width="203" height="2"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="203" id="MXP-0O-01r"/>
+                                    <constraint firstAttribute="width" secondItem="ago-dY-ZKJ" secondAttribute="height" multiplier="203:2" id="kCn-qQ-RJz">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="62"/>
+                                    </constraint>
+                                </constraints>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <mask key="constraints">
+                                        <exclude reference="MXP-0O-01r"/>
+                                    </mask>
+                                </variation>
+                            </progressView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.74848264460000002" green="0.768936336" blue="0.78823679690000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ago-dY-ZKJ" secondAttribute="bottom" constant="200" id="4hp-LV-hab">
+                                <variation key="heightClass=compact" constant="48"/>
+                                <variation key="heightClass=regular-widthClass=regular" constant="193"/>
+                            </constraint>
+                            <constraint firstItem="Ftb-zk-fuI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="93L-lT-8R8"/>
+                            <constraint firstItem="ago-dY-ZKJ" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="86" id="Gwq-BI-RRw">
+                                <variation key="heightClass=compact" constant="287"/>
+                                <variation key="heightClass=regular-widthClass=regular" constant="246"/>
+                            </constraint>
+                            <constraint firstItem="ago-dY-ZKJ" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="U1h-Pb-Zps"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Ftb-zk-fuI" secondAttribute="trailing" constant="20" id="ZOP-dR-Zpm"/>
+                            <constraint firstItem="Ftb-zk-fuI" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="b8s-lc-v36"/>
+                            <constraint firstItem="szF-dS-t6G" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="fNO-Yw-JEO"/>
+                            <constraint firstItem="ago-dY-ZKJ" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="ggt-6k-CuZ"/>
+                            <constraint firstItem="Ftb-zk-fuI" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="83" id="rC8-5l-yz0"/>
+                            <constraint firstItem="szF-dS-t6G" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="rwJ-b8-wci"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ago-dY-ZKJ" secondAttribute="trailing" constant="85" id="vF1-26-kbJ">
+                                <variation key="heightClass=compact" constant="286"/>
+                                <variation key="heightClass=regular-widthClass=regular" constant="231"/>
+                            </constraint>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="U1h-Pb-Zps"/>
+                                <exclude reference="ggt-6k-CuZ"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=regular">
+                            <mask key="constraints">
+                                <exclude reference="Gwq-BI-RRw"/>
+                                <include reference="U1h-Pb-Zps"/>
+                                <include reference="ggt-6k-CuZ"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="51.5625" y="375"/>
         </scene>
     </scenes>
 </document>
