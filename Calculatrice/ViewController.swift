@@ -34,13 +34,14 @@ class ViewController: UIViewController {
         clear()
     }
    
-
-    @IBAction func back(_ sender: Any) {
-        if(!op.isEmpty){
+    @IBAction func sup(_ sender: Any) {
+        if(!op.isEmpty)
+        {
             op.removeLast()
-            Operation.text=op
-        }
-    }
+            Operation.text = op
+        }    }
+    
+    
     
     @IBAction func modulo(_ sender: Any) {
         Ajouter_a_l_operation("%")
