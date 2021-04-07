@@ -69,10 +69,16 @@ class ViewController: UIViewController {
     
     
     @IBAction func egale(_ sender: Any) {
-        let expression=NSExpression(format: op)
-        let resultatfinal=expression.expressionValue(with: nil, context: nil) as!Double
-        let resultatformate=formate_resultat(val:resultatfinal)
-        Resultat.text=resultatformate    }
+        if(validerInput()){
+            let expression=NSExpression(format: op.replacingOccurrences(of: "%", with:""))
+            let resultatfinal=expression.expressionValue(with: nil, context: nil) as!Double
+            let resultatformate=formate_resultat(val:resultatfinal)
+            Resultat.text=resultatformate
+        }else
+        {
+            clear()
+        }
+    }
     
     func formate_resultat(val:Double)->String{
         if(val.truncatingRemainder(dividingBy: 1)==0){
@@ -83,7 +89,67 @@ class ViewController: UIViewController {
 
     }
     
-
+    
+    func validerInput() ->Bool
+    {
+        var count = 0
+        var indices = [Int]()
+        
+        for char in op
+        {
+            if(est_il_operateur(char:char))
+            {
+                indices.append(count)
+            }
+            count += 1
+        }
+        
+        var previous: Int = -1
+        
+        for indice in indices
+        {
+            if(indice == 0)
+            {
+                return false
+            }
+            
+            if(indice == op.count - 1)
+            {
+                return false
+            }
+            
+            if (previous != -1)
+            {
+                if(indice - previous == 1)
+                {
+                    return false
+                }
+            }
+            previous = indice
+        }
+        
+        return true
+    }
+    
+    
+    
+    func est_il_operateur (char: Character) -> Bool
+    {
+        if(char == "*")
+        {
+            return true
+        }
+        if(char == "/")
+        {
+            return true
+        }
+        if(char == "+")
+        {
+            return true
+        }
+        return false
+    }
+    
     @IBAction func zero(_ sender: Any) {
         Ajouter_a_l_operation("0")
         
